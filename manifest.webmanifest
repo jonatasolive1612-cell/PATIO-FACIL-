@@ -1,0 +1,10 @@
+{
+  "name": "Pátio Fácil - Controle de Pátio",
+  "short_name": "Pátio Fácil",
+  "description": "Controle de entrada e saída de veículos",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#122033",
+  "lang": "pt-BR"
+}
