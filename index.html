@@ -47,8 +47,8 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // Para ativar a nuvem, preencha SUPABASE_URL e SUPABASE_ANON_KEY no início deste bloco.
-const SUPABASE_URL = 'https://gwbvvmyljcxuovyqponu.supabase.co/rest/v1/';
-const SUPABASE_ANON_KEY = 'sb_secret_6B9KzgQ6yztce_9wze_3rQ_elRJljMo';
+const SUPABASE_URL = 'https://gwbvvmyljcxuovyqponu.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_l2XVU1i3xOI2xkOhH5bIxA_VKw83mz9';
 const CLOUD_ENABLED = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase);
 const $ = id => document.getElementById(id);
 let client = CLOUD_ENABLED ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
