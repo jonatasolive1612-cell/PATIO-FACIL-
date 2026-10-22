@@ -8,6 +8,19 @@
   <style>
     :root{--navy:#122033;--blue:#2457d6;--bg:#f3f6fa;--ink:#172033;--muted:#64748b;--line:#dce3ec;--green:#16845b;--red:#bd3434;--white:#fff}
     *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:12px 15px;font-weight:700}button:disabled{opacity:.55;cursor:not-allowed}.primary{background:var(--blue);color:white}.dark{background:var(--navy);color:white}.light{background:#e8eef7;color:var(--navy)}.danger{background:#fff0f0;color:var(--red)}.app-header{background:var(--navy);color:white;padding:18px 16px 22px}.head-inner{max-width:980px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;background:#fff;color:var(--navy);border-radius:13px;display:grid;place-items:center;font-size:23px}.brand h1{font-size:20px;margin:0}.brand p{margin:2px 0 0;color:#c6d2e4;font-size:12px}.wrap{max-width:980px;margin:-8px auto 40px;padding:0 14px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:17px;margin-bottom:14px;box-shadow:0 3px 12px #10203a08}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{padding:15px;background:#fff;border:1px solid var(--line);border-radius:15px}.stat span{display:block;font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:28px;margin-top:4px}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}.toolbar button{flex:1;min-width:135px}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}.section-title h2{font-size:18px;margin:0}.field{display:flex;flex-direction:column;gap:6px;margin:11px 0}.field label{font-size:13px;font-weight:700}.field input,.field select,.field textarea,.search{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:11px;background:white;color:var(--ink);min-height:45px}.field textarea{min-height:78px;resize:vertical}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.form-actions button{flex:1}.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.photo-slot{border:1.5px dashed #aebdd0;border-radius:12px;padding:12px;background:#f8fafc}.photo-slot label{font-weight:700;font-size:13px;display:block;margin-bottom:8px}.photo-slot input{width:100%;font-size:12px}.preview{width:100%;max-height:160px;object-fit:cover;border-radius:8px;margin-top:8px;display:none}.vehicle{display:flex;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding:13px 0}.vehicle:first-of-type{border-top:0}.vehicle-main{min-width:0}.plate{font-weight:850;letter-spacing:1px;font-size:17px}.sub{font-size:12px;color:var(--muted);margin-top:3px}.pill{font-size:11px;font-weight:800;border-radius:30px;padding:5px 9px;white-space:nowrap;background:#e0f6ea;color:#126b47}.pill.out{background:#e8eef7;color:#46566d}.vehicle-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.vehicle-actions button{padding:9px 10px;font-size:12px}.hidden{display:none!important}.notice{padding:11px 13px;border-radius:11px;font-size:13px;margin-bottom:12px;background:#fff5d8;color:#75520b}.notice.good{background:#e3f8ed;color:#126b47}.notice.error{background:#ffebeb;color:#a12222}.muted{color:var(--muted)}.empty{text-align:center;color:var(--muted);padding:24px 8px}.login{max-width:420px;margin:35px auto}.footer{text-align:center;font-size:11px;color:var(--muted);padding:18px}.top-actions{display:flex;gap:8px}.small{font-size:12px}.file-label{display:inline-block;background:#e8eef7;padding:9px 11px;border-radius:9px;font-weight:700;font-size:12px;cursor:pointer}.history-meta{font-size:12px;color:var(--muted)}
+
+    .photo-modal{position:fixed;inset:0;background:rgba(8,18,32,.78);z-index:9999;display:none;align-items:center;justify-content:center;padding:16px}
+    .photo-modal.open{display:flex}
+    .photo-modal-panel{background:#fff;border-radius:16px;width:min(900px,100%);max-height:90vh;overflow:auto;padding:16px}
+    .photo-modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:-16px;background:#fff;padding:2px 0 12px;z-index:1}
+    .photo-modal-head h2{font-size:18px;margin:0}
+    .photo-modal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .photo-modal-item{border:1px solid var(--line);border-radius:12px;padding:10px;min-width:0}
+    .photo-modal-item img{display:block;width:100%;max-height:340px;object-fit:contain;background:#f3f6fa;border-radius:8px}
+    .photo-modal-item p{font-size:13px;font-weight:700;margin:8px 0 0}
+    .photo-modal-status{padding:20px;text-align:center;color:var(--muted)}
+    @media(max-width:580px){.photo-modal{padding:8px}.photo-modal-panel{padding:12px;max-height:94vh}.photo-modal-grid{grid-template-columns:1fr}.photo-modal-item img{max-height:260px}}
+
     @media(max-width:580px){.stats{gap:7px}.stat{padding:12px 10px}.stat strong{font-size:24px}.grid2{grid-template-columns:1fr;gap:0}.vehicle{align-items:flex-start}.vehicle-actions{max-width:120px}.vehicle-actions button{width:100%}.photo-grid{grid-template-columns:1fr 1fr}.brand h1{font-size:18px}.head-inner .top-actions button{padding:9px;font-size:12px}}
   </style>
 </head>
@@ -44,6 +57,17 @@
   </section>
   <div class="footer">Pátio Fácil · Protótipo inicial · Proteja as credenciais e os dados dos veículos.</div>
 </main>
+
+<div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-labelledby="photoModalTitle">
+  <div class="photo-modal-panel">
+    <div class="photo-modal-head">
+      <h2 id="photoModalTitle">Fotos do veículo</h2>
+      <button id="closePhotoModal" type="button" class="light">Fechar ✕</button>
+    </div>
+    <div id="photoModalContent" class="photo-modal-grid"></div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 // Para ativar a nuvem, preencha SUPABASE_URL e SUPABASE_ANON_KEY no início deste bloco.
@@ -81,7 +105,56 @@ async function savePhotos(movementId,stage){const map=[['photoPlate','plate'],['
 function fileToDataURL(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
 $('movementForm').addEventListener('submit',async e=>{e.preventDefault();const plate=plateClean($('plate').value);if(!plate){showMsg('formMsg','Informe uma placa válida.','error');return}const mode=activeMode;const existingId=$('movementId').value;const btn=$('saveMovementBtn');btn.disabled=true;btn.textContent='Salvando...';try{if(CLOUD_ENABLED){if(mode==='entry'){const duplicate=movements.find(m=>m.plate===plate&&!m.exit_at);if(duplicate)throw new Error('Esta placa já possui uma entrada em aberto.');const payload={plate,model:$('model').value.trim()||null,color:$('color').value.trim()||null,os_number:$('osNumber').value.trim()||null,odometer:$('odometer').value?Number($('odometer').value):null,notes:$('notes').value.trim()||null,entry_at:nowISO(),entry_user:currentUser.id,entry_user_name:currentProfile.full_name||currentUser.email};const {data,error}=await client.from('movements').insert(payload).select().single();if(error)throw error;await savePhotos(data.id,'entry')}else{const m=movements.find(x=>x.id===existingId);if(!m||m.exit_at)throw new Error('Movimentação não encontrada ou saída já registrada.');await savePhotos(m.id,'exit');const {error}=await client.from('movements').update({exit_at:nowISO(),exit_user:currentUser.id,exit_user_name:currentProfile.full_name||currentUser.email,exit_notes:$('notes').value.trim()||null}).eq('id',m.id).is('exit_at',null);if(error)throw error}}else{if(mode==='entry'){if(movements.some(m=>m.plate===plate&&!m.exit_at))throw new Error('Esta placa já está no pátio.');const m={id:crypto.randomUUID(),plate,model:$('model').value.trim(),color:$('color').value.trim(),os_number:$('osNumber').value.trim(),odometer:$('odometer').value?Number($('odometer').value):null,notes:$('notes').value.trim(),entry_at:nowISO(),entry_user_name:currentProfile.full_name,exit_at:null};movements.unshift(m);await savePhotos(m.id,'entry')}else{const m=movements.find(x=>x.id===existingId);if(!m||m.exit_at)throw new Error('Veículo não encontrado ou saída já registrada.');await savePhotos(m.id,'exit');m.exit_at=nowISO();m.exit_user_name=currentProfile.full_name;m.exit_notes=$('notes').value.trim()}}if(!CLOUD_ENABLED)saveLocal();if(CLOUD_ENABLED)await refreshCloud();closeForm();render();showMsg('modeNotice',mode==='entry'?'Entrada registrada com sucesso.':'Saída registrada com sucesso.','good');setTimeout(()=>hideMsg('modeNotice'),3500)}catch(err){showMsg('formMsg','Não foi possível salvar: '+(err.message||'erro desconhecido')+'. Verifique a conexão e tente novamente.','error')}finally{btn.disabled=false;btn.textContent=mode==='entry'?'Salvar entrada':'Confirmar saída'}});
 window.startExit=id=>{const m=movements.find(x=>x.id===id);if(m)openForm('exit',m)};
-window.viewPhotos=async id=>{const m=movements.find(x=>x.id===id);if(!m)return;const list=photos.filter(p=>p.movement_id===id);if(!list.length){alert('Nenhuma foto registrada para este veículo.');return}let lines=[];for(const p of list){let url=p.local_data;if(CLOUD_ENABLED){const {data}=await client.storage.from('patio-photos').createSignedUrl(p.storage_path,120);url=data?.signedUrl||''}lines.push(`${p.stage==='entry'?'ENTRADA':'SAÍDA'} · ${p.photo_type.toUpperCase()}${url?'\n'+url:''}`)}alert(`Fotos de ${m.plate}\n\n${lines.join('\n\n')}\n\nNo modo demonstração, as imagens ficam neste aparelho. Na nuvem, abra os links exibidos.`)};
+window.viewPhotos=async id=>{
+  const m=movements.find(x=>x.id===id);
+  if(!m)return;
+  const list=photos.filter(p=>p.movement_id===id);
+  if(!list.length){alert('Nenhuma foto registrada para este veículo.');return}
+  const modal=$('photoModal'), content=$('photoModalContent');
+  $('photoModalTitle').textContent='Fotos do veículo · '+(m.plate||'');
+  content.innerHTML='<div class="photo-modal-status">Carregando fotos...</div>';
+  modal.classList.add('open');
+  const close=()=>modal.classList.remove('open');
+  try{
+    const items=[];
+    for(const p of list){
+      let url=p.local_data||'';
+      if(CLOUD_ENABLED){
+        if(!p.storage_path)continue;
+        const {data,error}=await client.storage.from('patio-photos').createSignedUrl(p.storage_path,3600);
+        if(error)throw error;
+        url=data?.signedUrl||'';
+      }
+      if(url)items.push({url,stage:p.stage==='entry'?'Entrada':'Saída',type:(p.photo_type||'foto').replace(/_/g,' ')});
+    }
+    content.innerHTML='';
+    if(!items.length){
+      content.innerHTML='<div class="photo-modal-status">Não foi possível carregar as imagens deste veículo.</div>';
+    }else{
+      for(const item of items){
+        const card=document.createElement('div');
+        card.className='photo-modal-item';
+        const img=document.createElement('img');
+        img.src=item.url;
+        img.alt=item.stage+' - '+item.type;
+        img.loading='lazy';
+        img.onerror=()=>{img.alt='Não foi possível carregar esta imagem';img.style.display='none';const err=document.createElement('p');err.textContent='Não foi possível carregar esta imagem.';card.appendChild(err)};
+        const caption=document.createElement('p');
+        caption.textContent=item.stage+' · '+item.type;
+        card.appendChild(img);card.appendChild(caption);content.appendChild(card);
+      }
+    }
+  }catch(err){
+    content.innerHTML='';
+    const status=document.createElement('div');
+    status.className='photo-modal-status';
+    status.textContent='Não foi possível carregar as fotos: '+(err.message||'verifique as permissões do Storage e tente novamente.');
+    content.appendChild(status);
+  }
+};
+$('closePhotoModal').addEventListener('click',()=>$('photoModal').classList.remove('open'));
+$('photoModal').addEventListener('click',e=>{if(e.target===$('photoModal'))$('photoModal').classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('photoModal').classList.remove('open')});
 $('historyBtn').addEventListener('click',()=>{$('historyCard').classList.remove('hidden');historyMode=true;renderHistory();$('historyCard').scrollIntoView({behavior:'smooth'})});$('closeHistoryBtn').addEventListener('click',()=>{$('historyCard').classList.add('hidden');historyMode=false});$('dateFrom').addEventListener('change',renderHistory);$('dateTo').addEventListener('change',renderHistory);
 function renderHistory(){const from=$('dateFrom').value,to=$('dateTo').value;const list=movements.filter(m=>{const d=(m.entry_at||'').slice(0,10);return(!from||d>=from)&&(!to||d<=to)}).sort((a,b)=>new Date(b.entry_at)-new Date(a.entry_at));$('historyList').innerHTML=list.length?list.map(m=>`<div class="vehicle"><div class="vehicle-main"><div class="plate">${escapeHTML(m.plate)}</div><div>${escapeHTML(m.model||'Modelo não informado')} · ${m.exit_at?'Saída registrada':'Ainda no pátio'}</div><div class="history-meta">Entrada: ${localDate(m.entry_at)} · Saída: ${m.exit_at?localDate(m.exit_at):'—'}</div><div class="history-meta">OS: ${escapeHTML(m.os_number||'—')} · ${photos.filter(p=>p.movement_id===m.id).length} foto(s)</div></div><button class="light" onclick="viewPhotos('${m.id}')">Fotos</button></div>`).join(''):'<div class="empty">Nenhuma movimentação no período.</div>'}
 $('exportBtn').addEventListener('click',()=>{const rows=[['Placa','Modelo','Cor','OS','Entrada','Saída','Status','Responsável entrada','Responsável saída','Observações'],...movements.map(m=>[m.plate,m.model||'',m.color||'',m.os_number||'',m.entry_at||'',m.exit_at||'',m.exit_at?'Fora do pátio':'No pátio',m.entry_user_name||'',m.exit_user_name||'',m.notes||''])];const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));a.download='patio-facil-'+todayISO()+'.csv';a.click();URL.revokeObjectURL(a.href)});
